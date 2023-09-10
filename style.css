@@ -1,0 +1,24 @@
+
+.wrapper { 
+    display:flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height:600px;
+    width:600px;
+    border: 2px solid black;
+}
+
+.container > * { 
+    border: 1px solid black;
+    
+}
+
+.container > *:hover {
+    background-color: grey;
+}
