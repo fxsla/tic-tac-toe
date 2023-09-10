@@ -3,7 +3,7 @@ const winnerText = document.getElementById('currentPlayer')
 
 const resetButton = document.getElementById('reset').addEventListener('click', () => {
     const container2 = document.getElementById('container');
-    const containerChildren2 = container.children;
+    const containerChildren2 = container2.children;
 
     for(let i=0; i<containerChildren2.length; i++){
         containerChildren2[i].textContent = "";
@@ -60,6 +60,17 @@ function checkWinner(board) {
         if(board[winners[i][0]] === board[winners[i][1]] && board[winners[i][0]] === board[winners[i][2]] && board[winners[i][0]] != ""){
             console.log(`${player.getTurn()} wins!`)
             winnerText.textContent = player.getTurn() + " wins!";
+
+            const container3 = document.getElementById('container');
+            const containerChildren3 = container3.children;
+            
+            for(let i=0; i<containerChildren3.length; i++){
+                let currentChild = containerChildren3[i];
+                currentChild.removeEventListener('click', () => {
+                    console.log("Do nothing");
+                })
+            }
+
 
         }
     }
